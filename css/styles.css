@@ -78,11 +78,17 @@ body {
 }
 
 .menu__item {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: #fff;
     font-size: 50px;
     line-height: 59px;
-    margin-bottom: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
     position: relative;
     padding-left: 48px;
+    outline-style: none;
 }
 
 .menu__item:hover {
@@ -92,11 +98,14 @@ body {
 
 .menu__item::before {
     display: none;
+}
+.checked::before {
+    /* display: none; */
     content: "";
     background-color: #D62B2E;
     position: absolute;
-    top: 20px;
-    left: 0;
+    top: 22px;
+    left: 5px;
     width: 18px;
     height: 18px;
     transform: rotate(45deg);
