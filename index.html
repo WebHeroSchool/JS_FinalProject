@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container-background">
-    <div class="main-screen-wrapper">
+    <div class="main-screen-wrapper" id="main-screen">
         <header class="header">
             <h1 class="header__title">Выберите уровень сложности:</h1>
             <p class="header__text">Выберите сложность и игра начнется.
@@ -23,6 +23,11 @@
                 <li class="menu__item">Сложный</li>
             </ul>
             <button class="button-start" type="button">Начать игру</button>
+            <section class="select-buttons">
+                <button type="button" class="menu__item checked" id="simple-level">Простой</button>
+                <button type="button" class="menu__item" id="middle-level">Средний</button>
+                <button type="button" class="menu__item" id="hard-level">Сложный</button>
+            </section>
         </main>
     </div>
 </div>
