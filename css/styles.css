@@ -1,0 +1,24 @@
+.table {
+    background-image: url(../images/field.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1745px;
+    height: 1164px;
+    display: flex;
+    /*height: 261px;*/
+    /*width: 95%;
+    /*position: absolute;*/
+}
+
+.table__wrap {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
+
+.table__card {
+    width: 218px;
+    height: 341px;
+}
