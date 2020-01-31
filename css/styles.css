@@ -100,16 +100,15 @@ body {
     display: none;
 }
 .checked::before {
-    /* display: none; */
+    background: url("../images/Rectangle 2.png") no-repeat ;
+    background-size: cover;
+    border: none;
     content: "";
-    background-color: #D62B2E;
+    width: 18px;
+    height: 18px;
     position: absolute;
     top: 22px;
     left: 5px;
-    width: 18px;
-    height: 18px;
-    transform: rotate(45deg);
-
 }
 
 .button-start {
