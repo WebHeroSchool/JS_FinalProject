@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container-background {
+    font-family: 'Roboto', sans-serif;
+    background-image: url("../images/Background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    width: 100%;
+    max-width: 100%;
+    min-width: 500px;
+    min-height: 1164px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.main-screen-wrapper {
+    padding: 130px 0 0 102px;
+}
+
+.main-screen-wrapper::before {
+    content: "";
+    background-image: url("../images/Inverted_Card.png");
+    position: absolute;
+    top: 545px;
+    right: 158px;
+    width: 218px;
+    height: 341px;
+    transform: rotate(40deg);
+    z-index: 1;
+    border-radius: 9px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.main-screen-wrapper::after {
+    content: "";
+    background-image: url("../images/Inverted_Card.png");
+    position: absolute;
+    top: 530px;
+    right: 338px;
+    width: 218px;
+    height: 341px;
+    transform: rotate(12deg);
+    border-radius: 9px;
+    box-shadow: -2px 0 1px rgba(0, 0, 0, 0.3), 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.header {
+    margin-bottom: 60px;
+    padding-right: 30px;
+}
+
+.header__title {
+    font-size: 57px;
+    margin: 0 0 7px 0;
+    line-height: 67px;
+}
+
+.header__text {
+    font-size: 19px;
+    line-height: 22px;
+    margin: 0;
+}
+
+.text-normal {
+    font-weight: normal;
+}
+
+.menu {
+    list-style: none;
+    margin-bottom: 112px;
+    padding-left: 0;
+}
+
+.menu__item {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 50px;
+    line-height: 59px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 48px;
+    outline-style: none;
+}
+.checked::before {
+    background: url("../images/Rectangle 2.png") no-repeat ;
+    background-size: cover;
+    border: none;
+    content: "";
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    top: 22px;
+    left: 5px;
+}
+
+.button-start {
+    font-size: 32px;
+    line-height: 37px;
+    color: #fff;
+    width: 352px;
+    height: 95px;
+    background-color: #D62B2E;
+    border-radius: 7px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-width: 0;
+    outline-style: none;
+}
