@@ -89,6 +89,10 @@ body {
     padding-left: 48px;
     outline-style: none;
 }
+.menu__item:hover {
+    color: #D62B2E;
+    cursor: pointer;
+}
 .checked::before {
     background: url("../images/Rectangle 2.png") no-repeat ;
     background-size: cover;
