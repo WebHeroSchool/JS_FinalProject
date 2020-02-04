@@ -1,3 +1,4 @@
+// Rombus position by choosen level
 const allButtons = document.querySelectorAll('.menu__item');
 console.log(allButtons );
 
@@ -7,3 +8,16 @@ const chooseLevel = (elem) => {
 };
 
 allButtons.forEach((item) => item.addEventListener("click", chooseLevel));
+
+
+//Start menu button by click
+const startButton = document.getElementById("start");
+const mainScreen = document.getElementById("main-screen");
+
+function startGame() {
+    mainScreen.remove();
+}
+
+startButton.addEventListener("click", startGame);
+
+
