@@ -117,13 +117,14 @@ body {
     border-width: 0;
     outline-style: none;
 }
-.table {
+#table_3 {
     background-image: url(../images/field.png);
     background-repeat: no-repeat;
     background-size: cover;
     width: 1745px;
     height: 1164px;
     display: flex;
+
 }
 
 .table__wrap {

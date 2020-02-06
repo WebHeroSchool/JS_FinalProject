@@ -13,9 +13,11 @@ allButtons.forEach((item) => item.addEventListener("click", chooseLevel));
 //Start menu button by click
 const startButton = document.getElementById("start");
 const mainScreen = document.getElementById("main-screen");
-
+const simpleLevel = document.getElementById("table_3");
 function startGame() {
     mainScreen.remove();
+    simpleLevel.add();
+
 }
 
 startButton.addEventListener("click", startGame);
