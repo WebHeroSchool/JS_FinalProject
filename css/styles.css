@@ -117,3 +117,50 @@ body {
     border-width: 0;
     outline-style: none;
 }
+.table {
+    background-image: url(../images/field.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1745px;
+    height: 1164px;
+    display: flex;
+}
+
+.table__wrap {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    perspective: 1000px;
+}
+
+.table__card {
+    width: 218px;
+    height: 341px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+.table__card.flip {
+    transform: rotateY(180deg);
+}
+
+.table__card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.card__front-face {
+    position: absolute;
+    backface-visibility: hidden;
+    background-image: url(../images/field.png);
+}
+
+.card__back-face {
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+
+}
+
