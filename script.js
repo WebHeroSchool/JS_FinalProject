@@ -14,10 +14,13 @@ console.log( cards);
 
 const mainContainer = document.querySelector(".container-background");
 console.log( mainContainer);
-const table3 = document.createElement("section");
-table3.classList.add("#table3");
+const table3 = document.createElement("div");
+table3.classList.add("table3");
 
-// Rombus position by choosen level
+
+
+
+// Rhombus position by chosen level
 const chooseLevel = (elem) => {
     allButtons.forEach((item) => item.classList.remove("checked"));
     elem.target.classList.add("checked");
@@ -32,7 +35,34 @@ function startGame() {
     mainScreen.remove();
     mainContainer.appendChild(table3);
 
+let card = () =>{
+    function createCard(){
+        const newCard = document.createElement("div");
+        newCard.classList.add("table__card");
 
+        const flipCardInner = document.createElement("div");
+        const flipCardBack = document.createElement("div");
+        const imgCardBack = document.createElement("img");
+
+        flipCardInner.appendChild(flipCardBack);
+        imgCardBack.setAttribute("src", "./images/card_back.png");
+        table3.appendChild(newCard);
+        newCard.appendChild(flipCardInner);
+        flipCardBack.appendChild(imgCardBack);
+
+    }
+
+    createCard();
+}
+    function createField(){
+        switch (level) {
+            case "simple-level":
+                table3.classList.add("centeredFor3");
+                card(currentLevel);
+                break;
+        }
+
+    }
 }
 
 startButton.addEventListener("click", startGame);

@@ -117,7 +117,7 @@ body {
     border-width: 0;
     outline-style: none;
 }
-#table_3 {
+.table_3 {
     background-image: url(../images/field.png);
     background-repeat: no-repeat;
     background-size: cover;
