@@ -132,51 +132,53 @@ body {
 .table__wrap {
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
+    justify-content: space-between;
     align-items: center;
-    flex-direction: row;
+    /*flex-direction: row;*/
     width: 40%;
     perspective: 1000px;
 }
 
-.inner-table__wrap{
+/*.inner-table__wrap{
     padding-left: 25px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-between;*/
 
 }
 
 .table__card {
-    display: flex;
+    /*display: flex;*/
     width: 218px;
     height: 341px;
-    /*position: relative;*/
+    position: relative;
     transform-style: preserve-3d;
     transition: transform .5s;
-    background: url("../images/card_back.png");
+    /*background: url("../images/card_back.png");*/
 }
 .table__card.flip {
     transform: rotateY(180deg);
 }
 
-/*.table__card:active {*/
-/*    transform: scale(0.97);*/
-/*    transition: transform .2s;*/
-/*}*/
+.table__card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
 
 .card__back-face {
     position: absolute;
-    width: 100%;
-    height: 100%;
+/*   width: 100%;
+    height: 100%;*/
     backface-visibility: hidden;
-    background-image: url("../images/card_back.png");
+    background-image: url(../images/Background.png);
+    /*background-image: url("../images/card_back.png");*/
 }
 
-/*.card__front-face {*/
-/*    position: absolute;*/
-/*    backface-visibility: hidden;*/
-/*    transform: rotateY(180deg);*/
+.card__front-face {
+   position: absolute;
+   backface-visibility: hidden;
+   transform: rotateY(180deg);
 
-/*}*/
+}
 
