@@ -71,7 +71,15 @@ function startGame() {
         }
 
         cards.forEach(card => card.addEventListener('click', flipCard));
+        let number = 3;
 
+        let randomCard = Math.floor(Math.random() * number);
+
+        for (let i = 0; i < number; i++ ) {
+            if (i === randomCard) {
+                cards[i].firstElementChild.src = "images/bug.png"
+            }
+        }
 
     }
 
@@ -81,17 +89,5 @@ function startGame() {
 
 startButton.addEventListener("click", startGame);
 
-// //переворот карты
 
-/*let number = 3;
-
-let randomCard = Math.floor(Math.random() * number);
-
-/*for (let i = 0; i < number; i++ ) {
-    if (i === randomCard) {
-        cards[i].firstElementChild.src = "images/bag.png"
-    }
-}*/
-console.log(cards);
-//console.log(randomCard);*/
 
