@@ -29,7 +29,7 @@ function startGame() {
     let card = () => {
         function createCard() {
             const newCard = document.createElement("div");
-            const flipCardInner = document.createElement("div");
+           // const flipCardInner = document.createElement("div");
             const flipCardBack = document.createElement("img");
             const imgCardBack = document.createElement("img");
             flipCardBack.src = "images/game_over.png";
@@ -64,6 +64,15 @@ function startGame() {
                 break;
         }
 
+        const cards = document.querySelectorAll('.table__card');
+
+        function flipCard() {
+            this.classList.toggle('flip');
+        }
+
+        cards.forEach(card => card.addEventListener('click', flipCard));
+
+
     }
 
     createField(currentLevel);
@@ -73,13 +82,6 @@ function startGame() {
 startButton.addEventListener("click", startGame);
 
 // //переворот карты
-const cards = document.querySelectorAll('.table__card');
-
-function flipCard() {
-    this.classList.toggle('flip');
-}
-
-cards.forEach(card => card.addEventListener('click', flipCard));
 
 /*let number = 3;
 
