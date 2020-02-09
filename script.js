@@ -33,7 +33,7 @@ function startGame() {
             const flipCardBack = document.createElement("img");
             const imgCardBack = document.createElement("img");
             flipCardBack.src = "images/game_over.png";
-            imgCardBack.src = "images/card_back.png";
+            imgCardBack.src = "images/Inverted_card.png";
 
             /*newCard.classList.add("table__card");
             flipCardInner.appendChild(flipCardBack);
@@ -56,11 +56,25 @@ function startGame() {
 };
 
     function createField(level) {
+        let numberOfCards;
         switch (level) {
             case "simple-level":
                 for(let i = 0; i < 3 ; i++) {
                     card(currentLevel);
                 }
+                numberOfCards = 3;
+                break;
+            case "middle-level":
+                for(let i = 0; i < 6 ; i++) {
+                    card(currentLevel);
+                }
+                numberOfCards = 6;
+                break;
+            case "hard-level":
+                for(let i = 0; i < 9 ; i++) {
+                    card(currentLevel);
+                }
+                numberOfCards = 9;
                 break;
         }
 
@@ -71,11 +85,11 @@ function startGame() {
         }
 
         cards.forEach(card => card.addEventListener('click', flipCard));
-        let number = 3;
+        //let number = 3;
 
-        let randomCard = Math.floor(Math.random() * number);
+        let randomCard = Math.floor(Math.random() * numberOfCards);
 
-        for (let i = 0; i < number; i++ ) {
+        for (let i = 0; i < numberOfCards; i++ ) {
             if (i === randomCard) {
                 cards[i].firstElementChild.src = "images/bug.png"
             }
