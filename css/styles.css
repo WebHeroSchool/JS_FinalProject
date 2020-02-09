@@ -175,7 +175,7 @@ body {
 /*.table__card:active {
     transform: scale(0.97);
     transition: transform .2s;*/
-}
+/*}*/
 
 .card__back-face {
     position: absolute;
