@@ -15,6 +15,12 @@ const chooseLevel = (elem) => {
 
 allButtons.forEach((item) => item.addEventListener("click", chooseLevel));
 
+function goToStart () {
+    mainContainer.appendChild(menuScreen);
+    innerField.innerHTML = '';
+    innerField.remove();
+    baseField.remove();
+}
 
 //Start menu button by click
 function startGame() {
