@@ -33,7 +33,7 @@ function startGame() {
             const flipCardBack = document.createElement("img");
             const imgCardBack = document.createElement("img");
             flipCardBack.src = "images/game_over.png";
-            imgCardBack.src = "images/Inverted_card.png";
+            imgCardBack.src = "images/Inverted_Card.png";
 
             /*newCard.classList.add("table__card");
             flipCardInner.appendChild(flipCardBack);
