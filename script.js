@@ -3,10 +3,8 @@ const startButton = document.getElementById("start");
 const mainScreen = document.getElementById("main-screen");
 const mainContainer = document.querySelector(".container-background");
 const baseField = document.createElement("div");
-//const innerField = document.createElement("div");
 
 baseField.classList.add("table__wrap");
-/*innerField.classList.add("inner-table__wrap");*/
 
 
 // Rhombus position by chosen level
@@ -24,24 +22,14 @@ function startGame() {
 
     mainScreen.remove();
     mainContainer.appendChild(baseField);
-    //baseField.appendChild(innerField);
 
     let card = () => {
         function createCard() {
             const newCard = document.createElement("div");
-           // const flipCardInner = document.createElement("div");
             const flipCardBack = document.createElement("img");
             const imgCardBack = document.createElement("img");
             flipCardBack.src = "images/game_over.png";
             imgCardBack.src = "images/Inverted_Card.png";
-
-            /*newCard.classList.add("table__card");
-            flipCardInner.appendChild(flipCardBack);
-            imgCardBack.classList.add("card__back-face");
-            innerField.appendChild(newCard);
-            newCard.appendChild(flipCardInner);
-            flipCardInner.appendChild(flipCardBack);
-            flipCardBack.appendChild(imgCardBack);*/
 
             newCard.classList.add("table__card");
             imgCardBack.classList.add("card__back-face");
