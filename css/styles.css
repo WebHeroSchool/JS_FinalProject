@@ -160,42 +160,39 @@ body {
     padding: 10px 0;
     transform-style: preserve-3d;
     transition: transform .5s;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
     /*background: url("../images/card_back.png");*/
     cursor: pointer;
 }
 .table__card.flip {
     transform: rotateY(180deg);
 }
-.table__card:hover {
 
-
-    /*transform: rotate(-3deg) translateY(-20px);
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
-    transition: .5s ease-in-out;*/
-}
 /*.table__card:active {
     transform: scale(0.97);
     transition: transform .2s;
     }*/
 
 
-.card__back-face {
+/*.card__back-face {
     position: absolute;
 /*   width: 100%;
     height: 100%;*/
-    backface-visibility: hidden;
-    background-image: url(../images/Background.png);
-    /*background-image: url("../images/card_back.png");*/
-}
+/*    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    background-image: url(../images/Background.png);*/
+    /*background-image: url("../images/card_back.png");
+}*/
 .card__back-face:hover {
     transform: rotate(-3deg) translateY(-20px);
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
     transition: .5s ease-in-out;
 }
 
-.card__front-face {
+.card__front-face, .card__back-face {
    position: absolute;
    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
    transform: rotateY(180deg);
 
 }
