@@ -174,8 +174,9 @@ body {
 }
 /*.table__card:active {
     transform: scale(0.97);
-    transition: transform .2s;*/
-}
+    transition: transform .2s;
+    }*/
+
 
 .card__back-face {
     position: absolute;
@@ -184,6 +185,11 @@ body {
     backface-visibility: hidden;
     /*background-image: url(../images/Background.png);
     /*background-image: url("../images/card_back.png");*/
+}
+.card__back-face:hover {
+    transform: rotate(-3deg) translateY(-20px);
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+    transition: .5s ease-in-out;
 }
 
 .card__front-face {
