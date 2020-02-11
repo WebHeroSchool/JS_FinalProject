@@ -3,13 +3,18 @@ const startButton = document.getElementById("start");
 const mainScreen = document.getElementById("main-screen");
 const mainContainer = document.querySelector(".container-background");
 const baseField = document.createElement("div");
+ //let oldField = document.querySelector(".table__wrap");
 
 function goToStart () {
-    mainContainer.appendChild(mainScreen);
+    mainContainer.appendChild(baseField);
+    // // oldField.innerHTML = '';
+    // oldField.remove();
     baseField.remove();
 }
-
+//
 baseField.classList.add("table__wrap");
+ //baseField.classList.toggle('table__wrap');
+
 
 // Rhombus position by chosen level
 const chooseLevel = (elem) => {
@@ -32,10 +37,10 @@ function startGame() {
                 item =  3;
                 break;
             case "middle-level":
-                item =  3;
+                item =  6;
                 break;
             case "hard-level":
-                item =  3;
+                item =  9;
                 break;
         }
         return item;
@@ -71,25 +76,26 @@ function startGame() {
     function createField(level) {
         switch (level) {
             case "simple-level":
-                for(let i = 0; i < 3 ; i++) {
+                for (let i = 0; i < 3; i++) {
                     card(currentLevel);
                 }
                 break;
             case "middle-level":
-                for(let i = 0; i < 6 ; i++) {
+                for (let i = 0; i < 6; i++) {
                     card(currentLevel);
                 }
                 break;
             case "hard-level":
-                for(let i = 0; i < 9 ; i++) {
+                for (let i = 0; i < 9; i++) {
                     card(currentLevel);
                 }
                 break;
         }
+    }
+    createField(currentLevel);
 
 
-          const cards = document.querySelectorAll('.table__card');
-        console.log(cards );
+        const cards = document.querySelectorAll('.table__card');
 
         function flipCard() {
             this.classList.toggle('flip');
@@ -105,16 +111,7 @@ function startGame() {
         }
 
         const allCards = document.querySelectorAll(".card__front-face");
-        allCards.forEach((item) => item.addEventListener("click", goToStart));
-
-    }
-
-
-
-    createField(currentLevel);
-
-
-}
+        allCards.forEach((item) => item.addEventListener("click", goToStart));}
 
 
 startButton.addEventListener("click", startGame);
