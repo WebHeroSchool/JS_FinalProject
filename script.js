@@ -92,11 +92,7 @@ function startGame() {
           const cards = document.querySelectorAll('.table__card');
         console.log(cards );
 
-        function flipCard() {
-            this.classList.toggle('flip');
-        }
 
-        cards.forEach(card => card.addEventListener('click', flipCard));
 
 
         let randomCard = Math.floor(Math.random() * numberOfCards);
@@ -105,8 +101,16 @@ function startGame() {
             if (i === randomCard) { cards[i].firstElementChild.src = "images/bug.png" }
         }
 
-        const allCards = document.querySelectorAll(".card__front-face");
-        allCards.forEach((item) => item.addEventListener("click", goToStart));
+        function flipCard() {
+            this.classList.toggle('flip');
+            const allCards = document.querySelectorAll(".table__card");
+            allCards.forEach((item) => item.addEventListener("click", goToStart));
+        }
+
+        cards.forEach(card => card.addEventListener('click', flipCard));
+
+      //  const allCards = document.querySelectorAll(".card__front-face");
+       // allCards.forEach((item) => item.addEventListener("click", goToStart));
 
     }
 
