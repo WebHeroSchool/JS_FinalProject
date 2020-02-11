@@ -64,22 +64,7 @@ function startGame() {
 
         createCard();
 
-        //   const cards = document.querySelectorAll('.table__card');
-        // console.log(cards );
-        //
-        // function flipCard() {
-        //     this.classList.toggle('flip');
-        // }
-        //
-        // cards.forEach(card => card.addEventListener('click', flipCard));
 
-
-        //
-        //  let randomCard = Math.floor(Math.random() * numberOfCards);
-        //
-        // for (let i = 0; i < numberOfCards; i++ ) {
-        //     if (i === randomCard) { cards[i].firstElementChild.src = "images/bug.png" }
-        // }
     }
 
     function createField(level) {
@@ -102,6 +87,22 @@ function startGame() {
         }
 
 
+          const cards = document.querySelectorAll('.table__card');
+        console.log(cards );
+
+        function flipCard() {
+            this.classList.toggle('flip');
+        }
+
+        cards.forEach(card => card.addEventListener('click', flipCard));
+
+
+        //
+        //  let randomCard = Math.floor(Math.random() * numberOfCards);
+        //
+        // for (let i = 0; i < numberOfCards; i++ ) {
+        //     if (i === randomCard) { cards[i].firstElementChild.src = "images/bug.png" }
+        // }
 
     }
 
