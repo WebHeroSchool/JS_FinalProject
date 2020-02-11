@@ -3,16 +3,15 @@ const startButton = document.getElementById("start");
 const mainScreen = document.getElementById("main-screen");
 const mainContainer = document.querySelector(".container-background");
 const baseField = document.createElement("div");
- //let oldField = document.querySelector(".table__wrap");
+
 
 function goToStart () {
     mainContainer.appendChild(baseField);
-    // // oldField.innerHTML = '';
-    // oldField.remove();
     baseField.remove();
 }
-//
+
 baseField.classList.add("table__wrap");
+
  //baseField.classList.toggle('table__wrap');
 
 
