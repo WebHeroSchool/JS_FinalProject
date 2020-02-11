@@ -16,9 +16,37 @@ const chooseLevel = (elem) => {
 allButtons.forEach((item) => item.addEventListener("click", chooseLevel));
 
 
+
+
+
+
+function goToStart () {
+    mainContainer.appendChild(mainScreen);
+    baseField.remove();
+}
+
+
 //Start menu button by click
 function startGame() {
+
     let currentLevel = document.querySelector(".checked").getAttribute("id");
+    let numberOfCards;
+    function numberOfCardsFunc (item) {
+        switch (item) {
+            case "simple-level":
+                return  3;
+                break;
+            case "middle-level":
+                return  6;
+                break;
+            case "hard-level":
+                return  9;
+                break;
+        }
+    }
+
+     numberOfCards = numberOfCardsFunc(currentLevel);
+    console.log(numberOfCards );
 
     mainScreen.remove();
     mainContainer.appendChild(baseField);
@@ -41,10 +69,22 @@ function startGame() {
 
         createCard();
 
+        // let createdCard = createCard();
+        const cards = document.querySelectorAll('.table__card');
+        console.log(cards );
+
+
+        let randomCard = Math.floor(Math.random() * numberOfCards);
+        for (let i = 0; i < numberOfCards; i++ ) {
+            if (i === randomCard) {
+                cards[i].firstElementChild.src = "images/bug.png"
+            }
+        }
+
+
     };
 
     function createField(level) {
-        let numberOfCards;
         switch (level) {
             case "simple-level":
                 for(let i = 0; i < 3 ; i++) {
@@ -75,17 +115,11 @@ function startGame() {
         cards.forEach(card => card.addEventListener('click', flipCard));
         //let number = 3;
 
-        let randomCard = Math.floor(Math.random() * numberOfCards);
 
-        for (let i = 0; i < numberOfCards; i++ ) {
-            if (i === randomCard) {
-                cards[i].firstElementChild.src = "images/bug.png"
-            }
-        }
 
     }
-
     createField(currentLevel);
+
 }
 
 
