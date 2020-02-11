@@ -5,11 +5,8 @@ const mainContainer = document.querySelector(".container-background");
 const baseField = document.createElement("div");
 let currentLevel = document.querySelector(".checked").getAttribute("id");
 
-console.log(currentLevel );
-
 
 baseField.classList.add("table__wrap");
-
 
 // Rhombus position by chosen level
 const chooseLevel = (elem) => {
@@ -24,7 +21,7 @@ allButtons.forEach((item) => item.addEventListener("click", chooseLevel));
 function goToStart () {
     mainContainer.appendChild(mainScreen);
     baseField.remove();
-};
+}
 
 //Start menu button by click
 function startGame() {
@@ -50,7 +47,7 @@ function startGame() {
         }
 
         createCard();
-    }
+    };
 
     function createField(level) {
         let numberOfCards;
@@ -82,8 +79,6 @@ function startGame() {
 
     }
 
-    console.log(createField(currentLevel));
-
     const cards = document.querySelectorAll('.table__card');
 
     let randomCard = Math.floor(Math.random() * createField(currentLevel));
@@ -92,7 +87,7 @@ function startGame() {
         if (i === randomCard) {
             cards[i].firstElementChild.src = "images/bug.png"
         }
-    };
+    }
 
 
     function flipCard() {
@@ -101,7 +96,7 @@ function startGame() {
             }
 
             createField(currentLevel);
-        };
+        }
 
 
 startButton.addEventListener("click", startGame);
