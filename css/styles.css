@@ -147,7 +147,7 @@ body {
     cursor: pointer;
 }
 
-.table__card .flip {
+.table__card.flip {
     transform: rotateY(180deg);
 }
 

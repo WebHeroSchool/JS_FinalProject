@@ -4,7 +4,10 @@ const mainScreen = document.getElementById("main-screen");
 const mainContainer = document.querySelector(".container-background");
 const baseField = document.createElement("div");
 
-
+function goToStart () {
+    mainContainer.appendChild(mainScreen);
+    baseField.remove();
+}
 
 baseField.classList.add("table__wrap");
 
@@ -16,10 +19,7 @@ const chooseLevel = (elem) => {
 
 allButtons.forEach((item) => item.addEventListener("click", chooseLevel));
 
-function goToStart () {
-    mainContainer.appendChild(mainScreen);
-    baseField.remove();
-}
+
 
 
 //Start menu button by click
@@ -29,15 +29,16 @@ function startGame() {
     const currentNumberOfCards = (item) => {
         switch (item) {
             case "simple-level":
-                return 3;
+                item =  3;
                 break;
             case "middle-level":
-                return 6;
+                item =  3;
                 break;
             case "hard-level":
-                return 9;
+                item =  3;
                 break;
         }
+        return item;
     };
 
     let numberOfCards = currentNumberOfCards(currentLevel);
@@ -65,7 +66,7 @@ function startGame() {
         createCard();
 
 
-    }
+    };
 
     function createField(level) {
         switch (level) {
@@ -97,16 +98,22 @@ function startGame() {
         cards.forEach(card => card.addEventListener('click', flipCard));
 
 
-        //
-        //  let randomCard = Math.floor(Math.random() * numberOfCards);
-        //
-        // for (let i = 0; i < numberOfCards; i++ ) {
-        //     if (i === randomCard) { cards[i].firstElementChild.src = "images/bug.png" }
-        // }
+        let randomCard = Math.floor(Math.random() * numberOfCards);
+
+        for (let i = 0; i < numberOfCards; i++ ) {
+            if (i === randomCard) { cards[i].firstElementChild.src = "images/bug.png" }
+        }
+
+        const allCards = document.querySelectorAll(".card__front-face");
+        allCards.forEach((item) => item.addEventListener("click", goToStart));
 
     }
 
+
+
     createField(currentLevel);
+
+
 }
 
 
