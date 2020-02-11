@@ -120,15 +120,6 @@ body {
     border-width: 0;
     outline-style: none;
 }
-/*.table_3 {*/
-/*    background-image: url(../images/field.png);*/
-/*    background-repeat: no-repeat;*/
-/*    background-size: cover;*/
-/*    width: 1745px;*/
-/*    height: 1164px;*/
-/*    display: flex;*/
-
-/*}*/
 
 .table__wrap {
     margin: 0 auto;
@@ -144,14 +135,6 @@ body {
     perspective: 1000px;
 }
 
-/*.inner-table__wrap{
-    padding-left: 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;*/
-
-/*}*/
-
 .table__card {
     /*display: flex;*/
     width: 218px;
@@ -163,25 +146,16 @@ body {
     /*background: url("../images/card_back.png");*/
     cursor: pointer;
 }
+
 .table__card.flip {
     transform: rotateY(180deg);
 }
 
-/*.table__card:active {
-    transform: scale(0.97);
-    transition: transform .2s;
-    }*/
-
 
 .card__back-face, .card__front-face {
     position: absolute;
-/*   width: 100%;
-    height: 100%;*/
     backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-    /*background-image: url(../images/Background.png);
-    /*background-image: url("../images/card_back.png");*/
 }
 .card__back-face:hover {
     transform: rotate(-3deg) translateY(-20px);
@@ -190,9 +164,6 @@ body {
 }
 
 .card__front-face {
-/*   position: absolute;
-   backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;*/
    transform: rotateY(180deg);
 
 }

@@ -3,11 +3,13 @@ const startButton = document.getElementById("start");
 const mainScreen = document.getElementById("main-screen");
 const mainContainer = document.querySelector(".container-background");
 const baseField = document.createElement("div");
-//const innerField = document.createElement("div");
+
+function goToStart () {
+    mainContainer.appendChild(mainScreen);
+    baseField.remove();
+}
 
 baseField.classList.add("table__wrap");
-/*innerField.classList.add("inner-table__wrap");*/
-
 
 // Rhombus position by chosen level
 const chooseLevel = (elem) => {
@@ -18,30 +20,40 @@ const chooseLevel = (elem) => {
 allButtons.forEach((item) => item.addEventListener("click", chooseLevel));
 
 
+
+
 //Start menu button by click
 function startGame() {
-    let currentLevel = document.querySelector(".checked").getAttribute("id");
+
+    const currentLevel = document.querySelector(".checked").getAttribute("id");
+    const currentNumberOfCards = (item) => {
+        switch (item) {
+            case "simple-level":
+                item =  3;
+                break;
+            case "middle-level":
+                item =  3;
+                break;
+            case "hard-level":
+                item =  3;
+                break;
+        }
+        return item;
+    };
+
+    let numberOfCards = currentNumberOfCards(currentLevel);
+    console.log(numberOfCards);
 
     mainScreen.remove();
     mainContainer.appendChild(baseField);
-    //baseField.appendChild(innerField);
 
     let card = () => {
         function createCard() {
             const newCard = document.createElement("div");
-           // const flipCardInner = document.createElement("div");
             const flipCardBack = document.createElement("img");
             const imgCardBack = document.createElement("img");
             flipCardBack.src = "images/game_over.png";
             imgCardBack.src = "images/Inverted_Card.png";
-
-            /*newCard.classList.add("table__card");
-            flipCardInner.appendChild(flipCardBack);
-            imgCardBack.classList.add("card__back-face");
-            innerField.appendChild(newCard);
-            newCard.appendChild(flipCardInner);
-            flipCardInner.appendChild(flipCardBack);
-            flipCardBack.appendChild(imgCardBack);*/
 
             newCard.classList.add("table__card");
             imgCardBack.classList.add("card__back-face");
@@ -53,55 +65,60 @@ function startGame() {
 
         createCard();
 
-};
+
+    };
 
     function createField(level) {
-        let numberOfCards;
         switch (level) {
             case "simple-level":
                 for(let i = 0; i < 3 ; i++) {
                     card(currentLevel);
                 }
-                numberOfCards = 3;
                 break;
             case "middle-level":
                 for(let i = 0; i < 6 ; i++) {
                     card(currentLevel);
                 }
-                numberOfCards = 6;
                 break;
             case "hard-level":
                 for(let i = 0; i < 9 ; i++) {
                     card(currentLevel);
                 }
-                numberOfCards = 9;
                 break;
         }
 
-        const cards = document.querySelectorAll('.table__card');
+
+          const cards = document.querySelectorAll('.table__card');
+        console.log(cards );
 
         function flipCard() {
             this.classList.toggle('flip');
         }
 
         cards.forEach(card => card.addEventListener('click', flipCard));
-        //let number = 3;
+
 
         let randomCard = Math.floor(Math.random() * numberOfCards);
 
         for (let i = 0; i < numberOfCards; i++ ) {
-            if (i === randomCard) {
-                cards[i].firstElementChild.src = "images/bug.png"
-            }
+            if (i === randomCard) { cards[i].firstElementChild.src = "images/bug.png" }
         }
+
+        const allCards = document.querySelectorAll(".card__front-face");
+        allCards.forEach((item) => item.addEventListener("click", goToStart));
 
     }
 
+
+
     createField(currentLevel);
+
+
 }
 
 
 startButton.addEventListener("click", startGame);
+
 
 
 
