@@ -72,6 +72,28 @@ function startGame() {
 
     };
 
+
+
+
+        const cards = document.querySelectorAll('.table__card');
+
+        function flipCard() {
+            this.classList.toggle('flip');
+        }
+
+        cards.forEach(card => card.addEventListener('click', flipCard));
+
+
+        let randomCard = Math.floor(Math.random() * numberOfCards);
+
+        for (let i = 0; i < numberOfCards; i++ ) {
+            if (i === randomCard) { cards[i].firstElementChild.src = "images/bug.png" }
+        }
+
+        const allCards = document.querySelectorAll(".card__front-face");
+        allCards.forEach((item) => item.addEventListener("click", goToStart));
+
+
     function createField(level) {
         switch (level) {
             case "simple-level":
@@ -92,25 +114,7 @@ function startGame() {
         }
     }
     createField(currentLevel);
-
-
-        const cards = document.querySelectorAll('.table__card');
-
-        function flipCard() {
-            this.classList.toggle('flip');
-        }
-
-        cards.forEach(card => card.addEventListener('click', flipCard));
-
-
-        let randomCard = Math.floor(Math.random() * numberOfCards);
-
-        for (let i = 0; i < numberOfCards; i++ ) {
-            if (i === randomCard) { cards[i].firstElementChild.src = "images/bug.png" }
-        }
-
-        const allCards = document.querySelectorAll(".card__front-face");
-        allCards.forEach((item) => item.addEventListener("click", goToStart));}
+}
 
 
 startButton.addEventListener("click", startGame);
