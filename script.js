@@ -4,8 +4,9 @@ const mainScreen = document.getElementById("main-screen");
 const mainContainer = document.querySelector(".container-background");
 const baseField = document.createElement("div");
 
-baseField.classList.add("table__wrap");
 
+
+baseField.classList.add("table__wrap");
 
 // Rhombus position by chosen level
 const chooseLevel = (elem) => {
@@ -14,11 +15,6 @@ const chooseLevel = (elem) => {
 };
 
 allButtons.forEach((item) => item.addEventListener("click", chooseLevel));
-
-
-
-
-
 
 function goToStart () {
     mainContainer.appendChild(mainScreen);
@@ -29,24 +25,23 @@ function goToStart () {
 //Start menu button by click
 function startGame() {
 
-    let currentLevel = document.querySelector(".checked").getAttribute("id");
-    let numberOfCards;
-    function numberOfCardsFunc (item) {
+    const currentLevel = document.querySelector(".checked").getAttribute("id");
+    const currentNumberOfCards = (item) => {
         switch (item) {
             case "simple-level":
-                return  3;
+                return 3;
                 break;
             case "middle-level":
-                return  6;
+                return 6;
                 break;
             case "hard-level":
-                return  9;
+                return 9;
                 break;
         }
-    }
+    };
 
-     numberOfCards = numberOfCardsFunc(currentLevel);
-    console.log(numberOfCards );
+    let numberOfCards = currentNumberOfCards(currentLevel);
+    console.log(numberOfCards);
 
     mainScreen.remove();
     mainContainer.appendChild(baseField);
@@ -69,20 +64,23 @@ function startGame() {
 
         createCard();
 
-        // let createdCard = createCard();
-        const cards = document.querySelectorAll('.table__card');
-        console.log(cards );
+        //   const cards = document.querySelectorAll('.table__card');
+        // console.log(cards );
+        //
+        // function flipCard() {
+        //     this.classList.toggle('flip');
+        // }
+        //
+        // cards.forEach(card => card.addEventListener('click', flipCard));
 
 
-        let randomCard = Math.floor(Math.random() * numberOfCards);
-        for (let i = 0; i < numberOfCards; i++ ) {
-            if (i === randomCard) {
-                cards[i].firstElementChild.src = "images/bug.png"
-            }
-        }
-
-
-    };
+        //
+        //  let randomCard = Math.floor(Math.random() * numberOfCards);
+        //
+        // for (let i = 0; i < numberOfCards; i++ ) {
+        //     if (i === randomCard) { cards[i].firstElementChild.src = "images/bug.png" }
+        // }
+    }
 
     function createField(level) {
         switch (level) {
@@ -90,36 +88,24 @@ function startGame() {
                 for(let i = 0; i < 3 ; i++) {
                     card(currentLevel);
                 }
-                numberOfCards = 3;
                 break;
             case "middle-level":
                 for(let i = 0; i < 6 ; i++) {
                     card(currentLevel);
                 }
-                numberOfCards = 6;
                 break;
             case "hard-level":
                 for(let i = 0; i < 9 ; i++) {
                     card(currentLevel);
                 }
-                numberOfCards = 9;
                 break;
         }
-
-        const cards = document.querySelectorAll('.table__card');
-
-        function flipCard() {
-            this.classList.toggle('flip');
-        }
-
-        cards.forEach(card => card.addEventListener('click', flipCard));
-        //let number = 3;
 
 
 
     }
-    createField(currentLevel);
 
+    createField(currentLevel);
 }
 
 
