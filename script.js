@@ -6,6 +6,7 @@ const baseField = document.createElement("div");
 
 function goToStart () {
     mainContainer.appendChild(mainScreen);
+    baseField.innerHTML = '';
     baseField.remove();
 }
 
