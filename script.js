@@ -26,24 +26,10 @@ allButtons.forEach((item) => item.addEventListener("click", chooseLevel));
 //Start menu button by click
 function startGame() {
 
-    const currentLevel = document.querySelector(".checked").getAttribute("id");
-    const currentNumberOfCards = (item) => {
-        switch (item) {
-            case "simple-level":
-                item =  3;
-                break;
-            case "middle-level":
-                item =  3;
-                break;
-            case "hard-level":
-                item =  9;
-                break;
-        }
-        return item;
-    };
-
+     const currentLevel = document.querySelector(".checked").getAttribute("id");
+    const currentNumberOfCards = (item) =>  item;
     let numberOfCards = currentNumberOfCards(currentLevel);
-    console.log(numberOfCards);
+
 
     mainScreen.remove();
     mainContainer.appendChild(baseField);
