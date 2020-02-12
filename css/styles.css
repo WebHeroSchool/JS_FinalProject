@@ -137,14 +137,15 @@ body {
 
 .table__card {
     /*display: flex;*/
+    cursor: pointer;
     width: 218px;
     height: 341px;
     position: relative;
-    padding: 10px 0;
+    margin: 10px 0;
     transform-style: preserve-3d;
     transition: transform .5s;
     /*background: url("../images/card_back.png");*/
-    cursor: pointer;
+
 }
 
 .table__card.flip {
@@ -156,6 +157,8 @@ body {
     position: absolute;
     backface-visibility: hidden;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+
 }
 .card__back-face:hover {
     transform: rotate(-3deg) translateY(-20px);
