@@ -12,7 +12,6 @@ function goToStart () {
 
 baseField.classList.add("table__wrap");
 
-// Rhombus position by chosen level
 const chooseLevel = (elem) => {
     allButtons.forEach((item) => item.classList.remove("checked"));
     elem.target.classList.add("checked");
@@ -20,13 +19,9 @@ const chooseLevel = (elem) => {
 
 allButtons.forEach((item) => item.addEventListener("click", chooseLevel));
 
-
-
-
-//Start menu button by click
 function startGame() {
 
-     const currentLevel = document.querySelector(".checked").getAttribute("id");
+    const currentLevel = document.querySelector(".checked").getAttribute("id");
     const currentNumberOfCards = (item) =>  item;
     let numberOfCards = currentNumberOfCards(currentLevel);
 
@@ -95,18 +90,11 @@ function startGame() {
 
         cards.forEach(card => card.addEventListener('click', flipCard));
 
-      //  const allCards = document.querySelectorAll(".card__front-face");
-       // allCards.forEach((item) => item.addEventListener("click", goToStart));
-
     }
-
-
 
     createField(currentLevel);
 
-
 }
-
 
 startButton.addEventListener("click", startGame);
 
