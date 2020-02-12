@@ -187,10 +187,32 @@ body {
     }
 }
 
+@media(max-width: 768px) {
+    .table__wrap {
+        width: 90%;
+    }
+    .main-screen-wrapper::before {
+        top: 700px;
+        right: 67px
+    }
+
+    .main-screen-wrapper::after {
+        top: 600px;
+        right: 65px
+    }
+}
+
 @media(max-width: 414px) {
+    .table__wrap {
+        width: 90%;
+    }
+    .main-screen-wrapper {
+        padding: 40px 0 0 70px;
+    }
+
     .main-screen-wrapper::before,
     .main-screen-wrapper::after {
-        opacity: 0.3;
+        opacity: 0;
     }
 
 }
