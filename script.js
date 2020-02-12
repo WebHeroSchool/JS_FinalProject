@@ -25,7 +25,6 @@ function startGame() {
     const currentNumberOfCards = (item) =>  item;
     let numberOfCards = currentNumberOfCards(currentLevel);
 
-
     mainScreen.remove();
     mainContainer.appendChild(baseField);
 
@@ -46,7 +45,6 @@ function startGame() {
         }
 
         createCard();
-
 
     };
 
@@ -73,11 +71,7 @@ function startGame() {
         }
 
 
-          const cards = document.querySelectorAll('.table__card');
-        console.log(cards );
-
-
-
+        const cards = document.querySelectorAll('.table__card');
 
         let randomCard = Math.floor(Math.random() * numberOfCards);
 
