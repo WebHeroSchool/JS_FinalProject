@@ -55,20 +55,20 @@ function startGame() {
             case "simple-level":
                 for(let i = 0; i < 3 ; i++) {
                     card(currentLevel);
-                    numberOfCards =3;
                 }
+                numberOfCards =3;
                 break;
             case "middle-level":
                 for(let i = 0; i < 6 ; i++) {
                     card(currentLevel);
-                    numberOfCards = 6;
                 }
+                numberOfCards = 6;
                 break;
             case "hard-level":
                 for(let i = 0; i < 9 ; i++) {
                     card(currentLevel);
-                    numberOfCards = 9;
                 }
+                numberOfCards = 9;
                 break;
         }
 
