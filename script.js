@@ -22,7 +22,7 @@ allButtons.forEach((item) => item.addEventListener("click", chooseLevel));
 function startGame() {
 
     const currentLevel = document.querySelector(".checked").getAttribute("id");
-    const currentNumberOfCards = (item) =>  item;
+    const currentNumberOfCards = item  =>  item;
     let numberOfCards = currentNumberOfCards(currentLevel);
 
     mainScreen.remove();
